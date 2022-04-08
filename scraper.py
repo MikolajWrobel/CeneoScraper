@@ -32,3 +32,6 @@ print(useless)
 
 publish_date = opinion.select_one("span.user-post_published > time:nth-child(1)")["datetime"]
 purchase_date = opinion.select_one("span.user-post_published > time:nth-child(2)")["datetime"]
+
+print(publish_date)
+print(purchase_date)
