@@ -30,5 +30,5 @@ useless = opinion.select_one("button.vote-no > span").get_text().strip()
 print(useful)
 print(useless)
 
-publish_date = opinion.select_one("span.user-post__publlished > time:nth-child(1)")["datetime"]
-print(publish_date)
+publish_date = opinion.select_one("span.user-post_published > time:nth-child(1)")["datetime"]
+purchase_date = opinion.select_one("span.user-post_published > time:nth-child(2)")["datetime"]
