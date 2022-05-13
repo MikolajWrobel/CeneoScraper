@@ -10,7 +10,7 @@ opinions = pd.read_json(f"opinions/{id}.json")
 
 opinions.stars = opinions.stars.map(lambda x: float(x.split("/")[0].replace(",",".")))
 opinions_count = len(opinions.index)
-# opinions_count = opinions.shape[0]
+opinions_count = opinions.shape[0]
 pros_count = opinions.pros.map(bool).sum()
 cons_count = opinions.cons.map(bool).sum()
 
@@ -25,7 +25,7 @@ recommendation.plot.pie(
 )
 
 plt.title("Rekomendacja")
-plt.savefig(f"opinions/{id}_recommendations.png")
+plt.savefig(f"plots/{id}_recommendations.png")
 plt.close()
 
 stars = opinions.stars.value_counts().sort_index().reindex(list(np.arange(0,5.5,0.5)), fill_value=0)
@@ -35,4 +35,6 @@ plt.xlabel("Liczba gwiazdek")
 plt.ylabel("Liczba opinii")
 plt.grid(True)
 plt.xticks(rotation=0)
-plt.show()
+plt.savefig(f"plots/{id}_stars.png")
+plt.close()
+
